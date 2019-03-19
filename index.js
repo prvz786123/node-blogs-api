@@ -8,4 +8,4 @@ app.use(bodyParser.json());
 
 app.use("/blogs",blogs_route)
 
-app.listen(8000)
+app.listen(process.env.PORT)
