@@ -7,9 +7,9 @@ const validateMiddle = require("../middleware/validate")
 //This route will return all blogs
 router.get("/",async(req,res)=>{
     blogs.getBlogs().then(allBlogs=>{
-        res.send(allBlogs)
+        res.send({success:true, blogs:allBlogs})
     }).catch(err=>{
-        res.send("Unable to get data")
+        res.send({success:false,err:"Unable to get data"})
     })
 })
 
@@ -20,13 +20,13 @@ router.post("/add", validateMiddle.validateNewBlog,async(req,res)=>{
     blogs.addBlog(newBlog)
     .then(success=>{
         if(success) {
-            res.send("Blogs Added Successfully")
+            res.send({success:true, message:"Blogs Added Successfully"})
         } else {
-            res.send("Unable to add Post")
+            res.send({success:false, err:"Unable to add Post"})
         }
     })
     .catch(err=>{
-        res.send(err)
+        res.send({success:false, err:err})
     })
 })
 

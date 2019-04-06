@@ -22,6 +22,15 @@ let validateNewBlog = (req,res,next)=>{
     }
 }
 
+let validateNewUser = (req,res,next)=>{
+    if(req.body.username && req.body.password && req.body.name) {
+        next();
+    } else {
+        res.send({success:false, err:"Registration details are not valid"})
+    }
+}
+
 module.exports ={
-    validateNewBlog
+    validateNewBlog,
+    validateNewUser
 }
