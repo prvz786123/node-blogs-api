@@ -30,6 +30,11 @@ router.post("/add", validateMiddle.validateNewBlog,async(req,res)=>{
     })
 })
 
+router.get("/categories",(req,res)=>{
+    let categories = ["Fashion","Travels & Tourism","Health","Entertainment",,"Technology","Automobile"]
+    res.status(200).send({success:true,categories})
+})
+
 //This is route will delete the post with help of object id
 router.delete("/delete",(req,res)=>{
     // check if requested id is valid
