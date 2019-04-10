@@ -31,7 +31,15 @@ router.post("/add", validateMiddle.validateNewBlog,async(req,res)=>{
 })
 
 router.get("/categories",(req,res)=>{
-    let categories = ["Fashion","Travels & Tourism","Health","Entertainment",,"Technology","Automobile"]
+    let categories = [
+        {title:"Fashion", imgUrl:"https://images.freecreatives.com/wp-content/uploads/2015/03/Huge-Backgrounds-42.jpg"},
+        {title:"Travels & Tourism", imgUrl:"https://images.freecreatives.com/wp-content/uploads/2015/03/Huge-Backgrounds-42.jpg"},
+        {title:"Health", imgUrl:"https://images.freecreatives.com/wp-content/uploads/2015/03/Huge-Backgrounds-42.jpg"},
+        {title:"Entertainment", imgUrl:"https://images.freecreatives.com/wp-content/uploads/2015/03/Huge-Backgrounds-42.jpg"},
+        {title:"Technology", imgUrl:"https://images.freecreatives.com/wp-content/uploads/2015/03/Huge-Backgrounds-42.jpg"},
+        {title:"Automobile", imgUrl:"https://images.freecreatives.com/wp-content/uploads/2015/03/Huge-Backgrounds-42.jpg"}
+    ]
+    
     res.status(200).send({success:true,categories})
 })
 
